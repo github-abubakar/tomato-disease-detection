@@ -130,7 +130,7 @@ def main():
 
                 # Display uploaded image (no cropping here)
                 st.subheader("Uploaded Image Preview")
-                st.image(image, width=350)
+                st.image(image, width=400)
 
                 # Convert the uploaded image to bytes for prediction
                 image_bytes = io.BytesIO()
