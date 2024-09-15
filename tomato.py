@@ -67,11 +67,20 @@ c.execute('''
 ''')
 conn.commit()
 
-# Function to save prediction into the database
+# Function to save prediction into the database with the correct timezone
 def save_prediction(disease, confidence):
-    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    # Define Bangladesh time zone
+    bangladesh_timezone = pytz.timezone("Asia/Dhaka")
+    
+    # Get the current time in UTC
+    utc_time = datetime.datetime.now(datetime.timezone.utc)
+    
+    # Convert the time to the Bangladesh time zone
+    bangladesh_time = utc_time.astimezone(bangladesh_timezone).strftime("%Y-%m-%d %H:%M:%S")
+    
+    # Save the prediction to the database
     c.execute("INSERT INTO predictions (disease, confidence, timestamp) VALUES (?, ?, ?)",
-              (disease, confidence, timestamp))
+              (disease, confidence, bangladesh_time))
     conn.commit()
 
 # Function to load the TensorFlow model
