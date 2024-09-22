@@ -1,6 +1,5 @@
 import streamlit as st
 import tensorflow as tf
-import os
 from PIL import Image, ImageOps
 import numpy as np
 import sqlite3
@@ -10,10 +9,7 @@ from streamlit_cropper import st_cropper
 import pandas as pd  # Add this line
 import base64  # Add this to encode images
 
-def main():
-    # Display current working directory
-    st.write("Current working directory:", os.getcwd())
-    st.write("Files in the directory:", os.listdir('.'))
+
 
 # Add causes and remedies for each disease class
 disease_info = {
@@ -94,23 +90,22 @@ disease_info = {
     }
 }
 
-# Set the base directory for images
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+
+
+# Assuming all images are in the same directory as your script
 disease_images = {
-    'Tomato___Bacterial_spot': os.path.join(BASE_DIR, 'bacterial_spot.jpg'),
-    'Tomato___Early_blight': os.path.join(BASE_DIR, 'early_blight.jpg'),
-    'Tomato___Late_blight': os.path.join(BASE_DIR, 'late_blight.jpg'),
-    'Tomato___Leaf_Mold': os.path.join(BASE_DIR, 'leaf_mold.jpg'),
-    'Tomato___Septoria_leaf_spot': os.path.join(BASE_DIR, 'septoria_leaf_spot.jpg'),
-    'Tomato___Spider_mites Two-spotted_spider_mite': os.path.join(BASE_DIR, 'spider_mites.jpg'),
-    'Tomato___Target_Spot': os.path.join(BASE_DIR, 'target_spot.jpg'),
-    'Tomato___Tomato_Yellow_Leaf_Curl_Virus': os.path.join(BASE_DIR, 'yellow_leaf_curl_virus.jpg'),
-    'Tomato___Tomato_mosaic_virus': os.path.join(BASE_DIR, 'mosaic_virus.jpg'),
-    'Tomato___healthy': os.path.join(BASE_DIR, 'healthy.jpg')
+    'Tomato___Bacterial_spot': 'bacterial_spot.jpg',
+    'Tomato___Early_blight': 'early_blight.jpg',
+    'Tomato___Late_blight': 'late_blight.jpg',
+    'Tomato___Leaf_Mold': 'leaf_mold.jpg',
+    'Tomato___Septoria_leaf_spot': 'septoria_leaf_spot.jpg',
+    'Tomato___Spider_mites Two-spotted_spider_mite': 'spider_mites.jpg',
+    'Tomato___Target_Spot': 'target_spot.jpg',
+    'Tomato___Tomato_Yellow_Leaf_Curl_Virus': 'yellow_leaf_curl_virus.jpg',
+    'Tomato___Tomato_mosaic_virus': 'mosaic_virus.jpg',
+    'Tomato___healthy': 'healthy.jpg'
 }
-
- 
 
 # Database setup
 conn = sqlite3.connect('disease_predictions.db')
