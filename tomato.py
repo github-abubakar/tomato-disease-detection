@@ -254,7 +254,7 @@ def main():
                 remedy = disease_info[selected_disease]['Remedy']
 
                 st.markdown(f"### {selected_disease}")
-                st.image('./known_image.png', width=350)  # Display the disease image
+                st.image('./healthy.JPG', width=350)  # Display the disease image
                 st.markdown(f"**Description:** {description}")
                 st.markdown(f"**Cause:** {cause}")
                 st.markdown(f"**Remedy:** {remedy}")
