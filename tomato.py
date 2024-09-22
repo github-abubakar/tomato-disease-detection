@@ -95,7 +95,7 @@ disease_info = {
 
 # Assuming all images are in the same directory as your script
 disease_images = {
-    'Tomato___Bacterial_spot': './/bacterial_spot.jpg',
+    'Tomato___Bacterial_spot': './bacterial_spot.jpg',
     'Tomato___Early_blight': 'early_blight.jpg',
     'Tomato___Late_blight': 'late_blight.jpg',
     'Tomato___Leaf_Mold': 'leaf_mold.jpg',
