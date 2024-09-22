@@ -245,10 +245,12 @@ def main():
             """)
 
             # Dropdown list for diseases
-            selected_disease = st.selectbox("Select a disease to learn more:", list(disease_info.keys()))
+            # Dropdown list for diseases with a default option
+            disease_options = ["Learn about diseases"] + list(disease_info.keys())
+            selected_disease = st.selectbox("Select a disease to learn more:", disease_options)
 
             # Display information based on selection
-            if selected_disease:
+            if selected_disease != "Learn about diseases":
                 description = disease_info[selected_disease]['Description']
                 cause = disease_info[selected_disease]['Cause']
                 remedy = disease_info[selected_disease]['Remedy']
@@ -258,6 +260,8 @@ def main():
                 st.markdown(f"**Description:** {description}")
                 st.markdown(f"**Cause:** {cause}")
                 st.markdown(f"**Remedy:** {remedy}")
+            else:
+                st.markdown("Please select a disease to learn more.")
 
 
         # Disease Recognition Page
