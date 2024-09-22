@@ -94,10 +94,20 @@ disease_info = {
     }
 }
 
-current_dir = os.getcwd()
+# Set the base directory for images
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 disease_images = {
-    'Tomato___Bacterial_spot': os.path.join(current_dir, 'bacterial_spot.jpg'),
-    # Other entries...
+    'Tomato___Bacterial_spot': os.path.join(BASE_DIR, 'bacterial_spot.jpg'),
+    'Tomato___Early_blight': os.path.join(BASE_DIR, 'early_blight.jpg'),
+    'Tomato___Late_blight': os.path.join(BASE_DIR, 'late_blight.jpg'),
+    'Tomato___Leaf_Mold': os.path.join(BASE_DIR, 'leaf_mold.jpg'),
+    'Tomato___Septoria_leaf_spot': os.path.join(BASE_DIR, 'septoria_leaf_spot.jpg'),
+    'Tomato___Spider_mites Two-spotted_spider_mite': os.path.join(BASE_DIR, 'spider_mites.jpg'),
+    'Tomato___Target_Spot': os.path.join(BASE_DIR, 'target_spot.jpg'),
+    'Tomato___Tomato_Yellow_Leaf_Curl_Virus': os.path.join(BASE_DIR, 'yellow_leaf_curl_virus.jpg'),
+    'Tomato___Tomato_mosaic_virus': os.path.join(BASE_DIR, 'mosaic_virus.jpg'),
+    'Tomato___healthy': os.path.join(BASE_DIR, 'healthy.jpg')
 }
 
  
