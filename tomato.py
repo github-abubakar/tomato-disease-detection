@@ -90,22 +90,22 @@ disease_info = {
     }
 }
 
-
-
-
-# Assuming all images are in the same directory as your script
-disease_images = {
-    'Tomato___Bacterial_spot': './bacterial_spot.jpg',
-    'Tomato___Early_blight': './early_blight.jpg',
-    'Tomato___Late_blight': './late_blight.jpg',
-    'Tomato___Leaf_Mold': './leaf_mold.jpg',
-    'Tomato___Septoria_leaf_spot': './septoria_leaf_spot.jpg',
-    'Tomato___Spider_mites Two-spotted_spider_mite': './spider_mites.jpg',
-    'Tomato___Target_Spot': 'target_spot.jpg',
-    'Tomato___Tomato_Yellow_Leaf_Curl_Virus': './yellow_leaf_curl_virus.jpg',
-    'Tomato___Tomato_mosaic_virus': './mosaic_virus.jpg',
-    'Tomato___healthy': './healthy.jpg'
-}
+def main():
+    # Display current working directory
+    st.write("Current working directory:", os.getcwd())
+    # Assuming all images are in the same directory as your script
+    disease_images = {
+        'Tomato___Bacterial_spot': './bacterial_spot.jpg',
+        'Tomato___Early_blight': './early_blight.jpg',
+        'Tomato___Late_blight': './late_blight.jpg',
+        'Tomato___Leaf_Mold': './leaf_mold.jpg',
+        'Tomato___Septoria_leaf_spot': './septoria_leaf_spot.jpg',
+        'Tomato___Spider_mites Two-spotted_spider_mite': './spider_mites.jpg',
+        'Tomato___Target_Spot': 'target_spot.jpg',
+        'Tomato___Tomato_Yellow_Leaf_Curl_Virus': './yellow_leaf_curl_virus.jpg',
+        'Tomato___Tomato_mosaic_virus': './mosaic_virus.jpg',
+        'Tomato___healthy': './healthy.jpg'
+    }
 
 # Database setup
 conn = sqlite3.connect('disease_predictions.db')
